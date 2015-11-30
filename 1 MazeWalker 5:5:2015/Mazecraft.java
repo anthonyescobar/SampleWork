@@ -73,7 +73,7 @@ public class Mazecraft {
         System.out.println("The program then reads the maze to use through standard input.  For maximum");
         System.out.println("convenience, provide this maze using redirection from a text file:");
         System.out.println();
-        System.out.println("    java Mazecraft 0 0 5 5 < six-by-six.maze.txt");
+        System.out.println("   ex: java Mazecraft 0 0 10 5 <mazes/lmu.maze.txt");
         System.out.println();
         System.out.println("All x-coordinates must range from 0 to the width of the given maze - 1 while");
         System.out.println("all y-coordinates must range from 0 to the height of the given maze - 1.");
