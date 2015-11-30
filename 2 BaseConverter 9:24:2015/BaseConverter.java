@@ -133,9 +133,9 @@ public class BaseConverter {
             return false;
         } else if (args.length == 3 && !isLong(args[2])) {
             return false;
-        } else if (Long.parseLong(args[1]) < 0) {
+        } else if (Long.parseLong(args[1]) < 2) {
             return false;
-        } else if (args.length == 3 && Long.parseLong(args[2]) < 0) {
+        } else if (args.length == 3 && Long.parseLong(args[2]) < 2) {
             return false;
         } else {
             int firstBound = 0;
@@ -176,9 +176,10 @@ public class BaseConverter {
     */   
     public static void main ( String[] args ) {
         if ( ! validArgs ( args ) ) {
-            System.out.println("Illegal Argument: args[0] must have integer values within brackets: '[]' ");
-            System.out.print("and those values must be smaller than args[1] which must also be an integer ");
-            System.out.print("value. In the case where no args[2] is given args[2] assumes the value of 10.\n\n");
+            System.out.println("Illegal Argument: args[0] must have integer values within brackets: '[]' " +
+                "and those values must be smaller than args[1] which must also be an integer " + 
+                "value. 0 or 1 are not a valid integers because they cannot be an appropriate base." + 
+                "\nIn the case where no args[2] is given args[2] assumes the value of 10.\n\n");
             throw new IllegalArgumentException();
         }
         else {
