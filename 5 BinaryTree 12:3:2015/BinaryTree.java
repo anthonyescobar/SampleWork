@@ -7,16 +7,20 @@ public class BinaryTree implements java.lang.Iterable {
     private BTnode root;
     private BTnode cursor;
 
+
+    /* Constructs an empty Binary Tree */
     public BinaryTree(){
         size = 0;
     }
 
+    /* Constructs a Binary Tree with the given Object as the Root */
     public BinaryTree(Object obj) {
         size = 1;
         root = new BTnode(obj);
         cursor = root;
     }
 
+    /* Returns the root of the BinaryTree */
     public BTnode getRoot() {
         return root;
     }
@@ -47,8 +51,8 @@ public class BinaryTree implements java.lang.Iterable {
         return similarHelper(this.root, that.root);
     }
 
-    // http://stackoverflow.com/questions/741900/binary-trees-question-checking-for-similar-shape
-    public boolean similarHelper(BTnode one, BTnode two) {
+    // adapted from http://stackoverflow.com/questions/741900/binary-trees-question-checking-for-similar-shape
+    private boolean similarHelper(BTnode one, BTnode two) {
         if (one.hasRightSon() && two.hasRightSon() && one.hasLeftSon() && two.hasLeftSon()) {
             return similarHelper(one.rSubTree, two.rSubTree) && 
                 similarHelper(one.lSubTree, two.lSubTree);
@@ -101,6 +105,7 @@ public class BinaryTree implements java.lang.Iterable {
         return size;
     }
 
+    /* Imcomplete hashcode generator */
     public int hashCode() {
         Treeterator iterator = new Treeterator(root);
         int count = 0;
@@ -126,10 +131,6 @@ public class BinaryTree implements java.lang.Iterable {
     public Treeterator iterator() {
         return new Treeterator(root);
     }
-
-    public Treeterator inOrder() {
-        return new Treeterator(root, true);
-    } 
 
     // For constructing trees, we will exploit the notion of a cursor that can 
     // be made to refer to different nodes. To support this idea, your class 
@@ -215,14 +216,6 @@ public class BinaryTree implements java.lang.Iterable {
         System.out.println("");
     }
 
-    public static void printInOrder(BinaryTree t) {
-        Treeterator iterator = t.inOrder();
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next().toString() + " ");
-        }
-        System.out.println("");
-    }
-
     public static BinaryTree createTestTree() {
         BinaryTree t = new BinaryTree("a");
 
@@ -273,10 +266,7 @@ public class BinaryTree implements java.lang.Iterable {
         printPreOrder(copy);
         System.out.println("test.equals(copy): " + test.equals(copy));
 
-        System.out.println("SIMILAR TEST: " + test.similar(copy));
-
-        // System.out.println("\nInorder: ");
-        // printInOrder(test);
+        System.out.println("similar() : " + test.similar(copy));
 
         System.out.println("cursor.getValue(): " + test.cursor.getValue());
         test.pruneFromCursor();

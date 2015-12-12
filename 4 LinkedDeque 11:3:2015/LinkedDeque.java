@@ -125,7 +125,6 @@ public class LinkedDeque {
             return s;
         } else {
             do {
-                System.out.println("FUCK " + current.contains() + "...");
                 s = s + "[" + current.contains() + "]";
                 current = current.getRight();
             } while (current != left);
@@ -163,7 +162,7 @@ public class LinkedDeque {
         System.out.println("\nafter deleteRight() on an empty LinkedDeque: " + deque.toString());
 
 
-        int x = 100;
+        int x = 5000;
         for (int i = 0; i < x; i++) {
             deque.insertRight("object" + i);
         }
@@ -177,8 +176,7 @@ public class LinkedDeque {
 
         deque.insertLeft("");
         deque.insertRight("");
-        DequeObject node = new DequeObject("Premade DequeObject");
-        deque.insertLeft(node);
-        // System.out.println("\n" + deque.left());
+
+        System.out.println("\n" + deque);
     }
 }
