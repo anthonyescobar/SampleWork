@@ -68,11 +68,6 @@ class RemainderNode {
             thirdNum = secondNum+1;
         }
         if (secondNum == contains.size()-1) {
-            firstNum++;
-            secondNum = firstNum+1;
-            thirdNum = secondNum+1;
-        }
-        if (firstNum == contains.size()-2) {
             return;
         }
         this.createCombinations(firstNum, secondNum, thirdNum);
