@@ -1,6 +1,3 @@
-# SampleWork
-This repository is meant to display my programming proficiency by displaying projects I have completed either through school or on my own. All logic is of my own working individually to find a solution.
-
 # Base Converter
 This program converts a given number from one base to another.
 
