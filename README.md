@@ -12,4 +12,4 @@ No imports, only first principles. A data structure for longs to be put into a c
 
 # Three Partition Solver
 Algorithm created and implemented by me.
-A function to check if a list of 3n size of numbers can be partitioned into a list of n triples such that the sum of each triple was the same. This program can handle a list of size 84 before throwing overflow errors due to the factorial nature of the problem. A solution is more easily found in Python using intertools, however I created a custom solution in Java without using an intertools equivalent.
+A function to check if a list of 3n size of numbers can be partitioned into a list of n triples such that the sum of each triple was the same. This program can handle a list of size 84 before throwing overflow errors due to the factorial nature of the problem. A simpler but brute force solution exists in Python using intertools, however I created a custom solution in Java without using an intertools equivalent.
