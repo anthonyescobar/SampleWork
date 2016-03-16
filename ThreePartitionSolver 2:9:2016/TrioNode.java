@@ -51,4 +51,7 @@ class TrioNode {
     public int getSum() {
         return sum;
     }
+    public String toString() {
+        return "(" + contains.get(0) + ", " + contains.get(1) + ", " + contains.get(2) + ")";
+    }
 }

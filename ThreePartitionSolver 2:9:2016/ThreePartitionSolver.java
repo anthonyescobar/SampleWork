@@ -7,7 +7,7 @@ A function to check if a list of 3n size of numbers can be partitioned into a li
 such that the sum of each triple was the same.
 
 ex.
-given: [2,4,8,12,15,2,0,6,3,2,9,1]
+given: [2,4,8,12,15,2,0,6,3,2,9,1] as 2 4 8 12 15 2 0 6 3 2 9 1
 
 the answer is true because you can partition this list as follows:
 [(4,3,9),(15,0,1),(8,2,6),(2,2,12)]
@@ -38,7 +38,9 @@ class ThreePartitionSolver {
 
             RemainderNode testNode = new RemainderNode(numbers);
 
-            return tailAlgorithm(testNode, 0, 1, testNode.possibleTrios, testNode.trioSum);
+            List<String> printList = new ArrayList<String>();
+
+            return tailAlgorithm(testNode, 0, 1, testNode.possibleTrios, testNode.trioSum, printList);
         }
         return false;
     }
@@ -49,23 +51,27 @@ class ThreePartitionSolver {
 
     if the sums are equal the algorithm is called recursively with the trio created by the remainder.
     */
-    public static boolean tailAlgorithm(RemainderNode remainder, int index, int level, int possibleTrios, int goal) {
+    public static boolean tailAlgorithm(RemainderNode remainder, int index, int level, int possibleTrios, int goal, List<String> printList) {
         // System.out.println("CC");
         remainder.createCombinations(0,1,2);
         // System.out.println("index: " + index + " remainder TrioList Size: " + remainder.getTrioList().size());
         while(index < remainder.getTrioList().size()) {
             TrioNode currentTrio = remainder.getTrioList().get(index);
             if (currentTrio.getSum() == goal) {
+                printList.add(currentTrio.toString());
+                // System.out.println(printList);
                 // System.out.println(index + " Made it? " + currentTrio.contains());
                 level++;
                 // System.out.println(level + " " + possibleTrios);
                 if (level == possibleTrios) {
+                printList.add(currentTrio.toString() + " Sum: " + currentTrio.getSum());
+                System.out.println(printList);
                     // System.out.println("Made it! ");
                     return true;
                 }
                 else if (!currentTrio.noMoreSolutions){
                     // System.out.println("NOT noMoreSolutions");
-                    return tailAlgorithm(currentTrio.getRemainder(), 0, level, possibleTrios, goal);
+                    return tailAlgorithm(currentTrio.getRemainder(), 0, level, possibleTrios, goal, printList);
                 }
             }
             // System.out.println("Reset Level ");
