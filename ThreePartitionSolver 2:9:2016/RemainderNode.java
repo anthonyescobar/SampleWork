@@ -32,14 +32,14 @@ class RemainderNode {
     }
 
     /**
-    Method to retrieves the TrioList.
+    Method to retrieves the TrioList
     */
     public List<TrioNode> getTrioList() {
         return trioList;
     }
 
     /**
-    Method to print the TrioList to the console.
+    Method to print the TrioList to the console
     */
     public void printTrioList() {
         for (int i = 0; i < trioList.size(); i++) {
@@ -48,14 +48,14 @@ class RemainderNode {
     }
 
     /**
-    Method to retrieves the data inside the Remainder Node.
+    Method to retrieves the data inside the Remainder Node
     */
     public List<Integer> contains() {
         return contains;
     }
 
     /**
-    Method to create a new Remainder Node, removing three numbers from the original node.
+    Method to create a new Remainder Node, removing three numbers from the original node
     */
     public static RemainderNode createRemainder(List<Integer> oldRem, List<Integer> toRemove) {
         List<Integer> old = new ArrayList<Integer>();
@@ -71,7 +71,7 @@ class RemainderNode {
     /**
     Method to create all possible combinations from the numbers within the Remainder Node.
     Each combination is put into a TrioNode and the TrioNodes are organized within the
-    Remainder Node as a List.
+    Remainder Node as a List
     */
     public void createCombinations(int firstNum, int secondNum, int thirdNum) {
         List<Integer> temp = new ArrayList<Integer>();

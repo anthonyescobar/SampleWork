@@ -4,7 +4,7 @@ import java.util.Collections;
 
 /**
 A function to check if a list of 3n size of numbers can be partitioned into a list of n triples 
-such that the sum of each triple was the same.
+such that the sum of each triple was the same
 
 ex.
 given: [2,4,8,12,15,2,0,6,3,2,9,1] as 2 4 8 12 15 2 0 6 3 2 9 1
@@ -15,7 +15,7 @@ the answer is true because you can partition this list as follows:
 while the answer would be false for:
 [6, -1, 8, 3455, 11, 7]
 
-The answer is also false if the length of the input list is not a multiple of 3. 
+The answer is also false if the length of the input list is not a multiple of 3
 */
 class ThreePartitionSolver {
     
@@ -37,7 +37,6 @@ class ThreePartitionSolver {
             }
 
             RemainderNode testNode = new RemainderNode(numbers);
-
             List<String> printList = new ArrayList<String>();
 
             return tailAlgorithm(testNode, 0, 1, testNode.possibleTrios, testNode.trioSum, printList);
@@ -47,35 +46,26 @@ class ThreePartitionSolver {
 
     /** 
     Algorithm has a trio and pairs it with it's remainder then runs the algorithms by
-    creating the different triocombinations of the remainder and comparing the sum to the trio's sum.
+    creating the different trio-combinations of the remainder and comparing the sum to the trio's sum
 
-    if the sums are equal the algorithm is called recursively with the trio created by the remainder.
+    If the sums are equal the algorithm is called recursively with the trio created by the remainder
     */
     public static boolean tailAlgorithm(RemainderNode remainder, int index, int level, int possibleTrios, int goal, List<String> printList) {
-        // System.out.println("CC");
         remainder.createCombinations(0,1,2);
-        // System.out.println("index: " + index + " remainder TrioList Size: " + remainder.getTrioList().size());
         while(index < remainder.getTrioList().size()) {
             TrioNode currentTrio = remainder.getTrioList().get(index);
             if (currentTrio.getSum() == goal) {
                 printList.add(currentTrio.toString());
-                // System.out.println(printList);
-                // System.out.println(index + " Made it? " + currentTrio.contains());
                 level++;
-                // System.out.println(level + " " + possibleTrios);
                 if (level == possibleTrios) {
                 printList.add(currentTrio.toString() + " Sum: " + currentTrio.getSum());
                 System.out.println(printList);
-                    // System.out.println("Made it! ");
                     return true;
                 }
                 else if (!currentTrio.noMoreSolutions){
-                    // System.out.println("NOT noMoreSolutions");
                     return tailAlgorithm(currentTrio.getRemainder(), 0, level, possibleTrios, goal, printList);
                 }
             }
-            // System.out.println("Reset Level ");
-            // level = 0; // need to figure out where to put this
             index++;
         }
         return false;
@@ -89,7 +79,7 @@ class ThreePartitionSolver {
     }
     
     /**
-    Method to check if finding a solution would be impossible because the largest number is too large.
+    Method to check if finding a solution would be impossible because the largest number is too large
     */
     public static boolean isImpossible(List<Integer> numbers) {
         return numbers.get(0) + numbers.get(numbers.size()-1 ) + numbers.get(numbers.size()-1) > 

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
-TrioNode is a Node Object for ThreePartition Solver.
+TrioNode is a Node Object for ThreePartition Solver
 
 Instance Variables
     contains: The three numbers representing the TrioNode
@@ -23,7 +23,7 @@ class TrioNode {
     }
 
     /**
-    Initializes a TrioNode object 
+    Initializes a TrioNode object
     */
     public TrioNode(List<Integer> contains, RemainderNode remainder) {
         this.contains = contains;
@@ -46,11 +46,15 @@ class TrioNode {
         return remainder;
     }
     /**
-    Method to return private instance variable sum.
+    Method to return private instance variable sum
     */
     public int getSum() {
         return sum;
     }
+
+    /**
+    Method to convert the TrioNode into a user friendly output
+    */
     public String toString() {
         return "(" + contains.get(0) + ", " + contains.get(1) + ", " + contains.get(2) + ")";
     }
