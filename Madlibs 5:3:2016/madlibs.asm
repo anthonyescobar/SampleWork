@@ -1,22 +1,22 @@
 ;---------------------------------------------------------------------------------
 ; madlibs/madlibs.asm
-; 
+;
 ; This program will take arguments and insert them into the given statement at its index number.
 ;
 ; nasm -felf64 madlibs.asm && gcc madlibs.o madlib-by-numbers.c -std=c99 && ./a.out "Statement" [Arguments]
 ;----------------------------------------------------------------------------------
-        
+
         global  main
-        
+
         extern  puts
         extern  printf
         extern  atoi
 
         extern  madlib_by_numbers
-        
+
         section .text
 main:
-        cmp rdi, 2              ; 
+        cmp rdi, 2              ;
         jl error                ; jumps to error if rax < 2
 
         push    rbx
