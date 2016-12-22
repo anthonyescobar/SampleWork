@@ -23,14 +23,6 @@ Interactive commands:
   quit
     -- Exit the program
 
-
-Note: The index should be case-insensitive. You can achieve this by
-converting all words to lower case (when building the index). Use the
-method lower() on strings.
-
-  For example, the commands "words a" and "words A" should always have
-  the same response.
-
 Example session:
 
 $ python3 index.py lorem.txt ipsum.txt 
