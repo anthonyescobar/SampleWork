@@ -1,4 +1,4 @@
-Write a Python program that builds an index of one or more files, and
+A Python program that builds an index of one or more files, and
 then lets the user interactively query the index to look up the
 occurrences of words, print out a particular occurrence, or output the
 entire index.
