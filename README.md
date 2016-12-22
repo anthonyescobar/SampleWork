@@ -14,5 +14,5 @@ No imports, only first principles. A data structure of objects within nodes in w
 # Madlibs (x86-Assembly & C)
 Arguments are processed in assembly and piped to the C file to compute. This program will take arguments and insert them into the given statement at its index number. This program supports up to 10 arguments to madlib (digits 0-9) and if the argmument length does not reach a given number then the number is unchanged.
 
-# WordIndex (Python)
+# WordIndexer (Python)
 Python program that builds an index of one or more files, and then lets the user interactively query the index to look up the occurrences of words, print out a particular occurrence, or output the entire index.
